@@ -47,5 +47,5 @@ net = load_model()
 conf_threshold = st.slider("Set Confidence Level", min_value = 0.0, max_value = 1.0,
                            step = 0.01, value = 0.5)
 
-webrtc_streamer("Web Streamer", video_processor_factory=VideoFaceProcessor)
+# webrtc_streamer("Web Streamer", video_processor_factory=VideoFaceProcessor)
 
