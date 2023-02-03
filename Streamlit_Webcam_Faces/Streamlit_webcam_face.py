@@ -6,9 +6,10 @@ import av
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model_file = "res10_300x300_ssd_iter_140000_fp16.caffemodel"
-    config_file = "deploy.prototxt"
-    return cv2.dnn.readNetFromCaffe(config_file, model_file)
+    modelFile = "res10_300x300_ssd_iter_140000_fp16.caffemodel"
+    configFile = "deploy.prototxt"
+    net_load = cv2.dnn.readNetFromCaffe(configFile, modelFile)
+    return net_load
 
 
 class VideoFaceProcessor:
