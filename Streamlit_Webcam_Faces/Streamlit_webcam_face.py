@@ -4,6 +4,7 @@ from streamlit_webrtc import webrtc_streamer
 import av
 
 
+@st.cache(allow_output_mutation=True)
 def load_model():
     model_file = "res10_300x300_ssd_iter_140000_fp16.caffemodel"
     config_file = "deploy.prototxt"
@@ -47,5 +48,5 @@ net = load_model()
 conf_threshold = st.slider("Set Confidence Level", min_value = 0.0, max_value = 1.0,
                            step = 0.01, value = 0.5)
 
-# webrtc_streamer("Web Streamer", video_processor_factory=VideoFaceProcessor)
+webrtc_streamer("Web Streamer", video_processor_factory=VideoFaceProcessor)
 
